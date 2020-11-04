@@ -1,5 +1,5 @@
 {
-    "name": "actionml/actionml",
+    "name": "ecommercebox/actionml",
     "type": "library",
     "description": "ActionML Harness API PHP Client",
     "keywords": [
