@@ -1,0 +1,43 @@
+{
+    "name": "actionml/actionml",
+    "type": "library",
+    "description": "ActionML Harness API PHP Client",
+    "keywords": [
+        "predictionio",
+        "rest",
+        "restful",
+        "web service",
+        "prediction",
+        "recommendation",
+        "actionml",
+        "harness"
+    ],
+    "homepage": "https://actionml.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Apache PredictionIO",
+            "email": "dev@predictionio.apache.org",
+            "homepage": "http://predictionio.apache.org"
+        },
+        {
+            "name": "Mariusz Mielnik",
+            "email": "m@ecbox.io",
+            "homepage": "https://ecommercebox.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "guzzlehttp/guzzle": "^6.5.5"
+    },
+    "require-dev": {
+        "symfony/class-loader": "^2.3",
+        "phpunit/phpunit": "^5",
+        "apigen/apigen": "^4.1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "actionml\\": "src/actionml/"
+        }
+    }
+}
