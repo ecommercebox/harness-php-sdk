@@ -1,4 +1,4 @@
-# ActionML PHP SDK
+# ActionML PHP SDK (IN DEVELOPMENT)
 
 [![Build
 Status](https://travis-ci.org/ecommercebox/harness-php-sdk.svg?branch=develop)](https://travis-ci.org/ecommercebox/harness-php-sdk)
@@ -20,7 +20,7 @@ The easiest way to install ActionML PHP client is to use
 1. `actionml` is available on [Packagist](https://packagist.org) and can be
 installed using [Composer](https://getcomposer.org/):
 
-        composer require actionml/actionml
+        composer require ecommercebox/actionml
 
 2. Include Composer's autoloader in your PHP code
 

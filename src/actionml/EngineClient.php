@@ -55,6 +55,19 @@ class EngineClient extends BaseClient
         return \GuzzleHttp\json_decode($this->client->get('/engines/' . $this->engineId)->getBody(), true);
     }
 
+
+    /**
+     * Modify any params that the Engine allows
+     *
+     * @param string $json Config json
+     * @return array
+     * @throws ActionMLAPIError
+     */
+    public function updateEngineConfig($json)
+    {
+        return $this->sendRequest("PUT", "/engines/$this->engineId", json_encode($json));
+    }
+
     /**
      * Send prediction query to an Engine Instance
      *
