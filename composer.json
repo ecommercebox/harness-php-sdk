@@ -32,8 +32,7 @@
     },
     "require-dev": {
         "symfony/class-loader": "^2.3",
-        "phpunit/phpunit": "^5",
-        "apigen/apigen": "^4.1.2"
+        "phpunit/phpunit": "^5"
     },
     "autoload": {
         "psr-4": {

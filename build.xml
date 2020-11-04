@@ -42,10 +42,6 @@ limitations under the License.
     <exec command="php composer.phar update --dev" passthru="true" />
   </target>
 
-  <target name="apigen">
-    <exec command="vendor/apigen/apigen/bin/apigen generate -s src -d docs --title 'PredictionIO API PHP Client'" passthru="true" />
-  </target>
-
   <target name="test">
     <exec command="vendor/phpunit/phpunit/phpunit" passthru="true" />
   </target>
