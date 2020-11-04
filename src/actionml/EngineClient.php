@@ -141,6 +141,42 @@ class EngineClient extends BaseClient
         return $this->sendQuery($query);
     }
 
+    /**
+     * Send item query to an Engine Instance
+     *
+     * @param string $iid Item id
+     * @param array $biznesRules Biznes rules ex:
+     * [
+     * [
+     * 'name' => 'category',
+     * 'values' => ['phone','tablets'],
+     * 'bias' => 1.02,
+     * ],
+     * [
+     * 'name' => 'brand',
+     * 'values' => ['apple'],
+     * 'bias' => -1,
+     * ],
+     * ]
+     *
+     * @return array JSON response
+     *
+     * @throws ActionMLAPIError Request error
+     */
+
+    public function queryUserItem($uid, $iid, array $biznesRules = null)
+    {
+        $query = [
+            'item' => strval($iid),
+            'user' => strval($uid),
+        ];
+
+        if (!empty($biznesRules)) {
+            $query = array_merge($query, ['rules' => $biznesRules]);
+        }
+
+        return $this->sendQuery($query);
+    }
 
     /**
      * Send user query to an Engine Instance

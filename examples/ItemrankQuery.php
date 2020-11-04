@@ -47,6 +47,9 @@ $response = $client->queryUser($i, [
 ]);
 print_r($response);
 
+// Rank item set
+$response = $client->queryUserItem(1, 1);
+print_r($response);
 
 // Rank item set
 $response = $client->queryItem(1);
