@@ -1,7 +1,7 @@
 # ActionML PHP SDK
 
 [![Build
-Status](https://travis-ci.org/apache/predictionio-sdk-php.svg?branch=develop)](https://travis-ci.org/apache/predictionio-sdk-php)
+Status](https://travis-ci.org/ecommercebox/harness-php-sdk.svg?branch=develop)](https://travis-ci.org/ecommercebox/harness-php-sdk)
 
 ## Prerequisites
 
