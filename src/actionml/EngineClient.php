@@ -59,13 +59,25 @@ class EngineClient extends BaseClient
     /**
      * Modify any params that the Engine allows
      *
-     * @param string $json Config json
+     * @param array $json Config json
      * @return array
      * @throws ActionMLAPIError
      */
-    public function updateEngineConfig($json)
+    public function updateEngineConfig($config)
     {
-        return $this->sendRequest("PUT", "/engines/$this->engineId", json_encode($json));
+        return $this->sendRequest("POST", "/engines/$this->engineId/configs", json_encode($config));
+    }
+
+
+    /**
+     * Start train job
+     *
+     * @return array
+     * @throws ActionMLAPIError
+     */
+    public function train()
+    {
+        return $this->sendRequest("POST", "/engines/$this->engineId/jobs", null);
     }
 
     /**
