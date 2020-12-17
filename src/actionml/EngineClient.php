@@ -99,13 +99,13 @@ class EngineClient extends BaseClient
      * 'bias' => -1,
      * ],
      * ]
-     *
+     * @param array $blacklistItems
      * @return array JSON response
      *
      * @throws ActionMLAPIError Request error
      */
 
-    public function queryUser($uid, array $biznesRules = null)
+    public function queryUser($uid, array $biznesRules = null, $blacklistItems = null)
     {
         $query = [
             'user' => strval($uid),
@@ -113,6 +113,10 @@ class EngineClient extends BaseClient
 
         if (!empty($biznesRules)) {
             $query = array_merge($query, ['rules' => $biznesRules]);
+        }
+
+        if (!empty($blacklistItems)) {
+            $query = array_merge($query, ['blacklistItems' => $blacklistItems]);
         }
 
         return $this->sendQuery($query);
@@ -135,13 +139,13 @@ class EngineClient extends BaseClient
      * 'bias' => -1,
      * ],
      * ]
-     *
+     * @param array $blacklistItems
      * @return array JSON response
      *
      * @throws ActionMLAPIError Request error
      */
 
-    public function queryItem($iid, array $biznesRules = null)
+    public function queryItem($iid, array $biznesRules = null, $blacklistItems = null)
     {
         $query = [
             'item' => strval($iid),
@@ -151,12 +155,17 @@ class EngineClient extends BaseClient
             $query = array_merge($query, ['rules' => $biznesRules]);
         }
 
+        if (!empty($blacklistItems)) {
+            $query = array_merge($query, ['blacklistItems' => $blacklistItems]);
+        }
+
         return $this->sendQuery($query);
     }
 
     /**
      * Send item query to an Engine Instance
      *
+     * @param $uid
      * @param string $iid Item id
      * @param array $biznesRules Biznes rules ex:
      * [
@@ -171,13 +180,13 @@ class EngineClient extends BaseClient
      * 'bias' => -1,
      * ],
      * ]
-     *
+     * @param array $blacklistItems
      * @return array JSON response
      *
      * @throws ActionMLAPIError Request error
      */
 
-    public function queryUserItem($uid, $iid, array $biznesRules = null)
+    public function queryUserItem($uid, $iid, array $biznesRules = null, $blacklistItems = null)
     {
         $query = [
             'item' => strval($iid),
@@ -186,6 +195,10 @@ class EngineClient extends BaseClient
 
         if (!empty($biznesRules)) {
             $query = array_merge($query, ['rules' => $biznesRules]);
+        }
+
+        if (!empty($blacklistItems)) {
+            $query = array_merge($query, ['blacklistItems' => $blacklistItems]);
         }
 
         return $this->sendQuery($query);
@@ -208,13 +221,13 @@ class EngineClient extends BaseClient
      * 'bias' => -1,
      * ],
      * ]
-     *
+     * @param array $blacklistItems
      * @return array JSON response
      *
      * @throws ActionMLAPIError Request error
      */
 
-    public function queryItemSet(array $iids, array $biznesRules = null)
+    public function queryItemSet(array $iids, array $biznesRules = null, $blacklistItems = null)
     {
         $query = [
             'itemSet' => array_map('strval', $iids),
@@ -222,6 +235,10 @@ class EngineClient extends BaseClient
 
         if (!empty($biznesRules)) {
             $query = array_merge($query, ['rules' => $biznesRules]);
+        }
+
+        if (!empty($blacklistItems)) {
+            $query = array_merge($query, ['blacklistItems' => $blacklistItems]);
         }
 
         return $this->sendQuery($query);
